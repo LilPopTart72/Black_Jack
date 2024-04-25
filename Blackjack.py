@@ -1,5 +1,5 @@
 import Cards
-import InputCommands as IC
+import InputCommands as Ic
 
 
 def basic_print(code):
@@ -10,13 +10,13 @@ def basic_print(code):
     print(dealer.cards)
     print("Dealer score:", dealer.score)
     if code == 1:
-        return IC.play(player)
+        return Ic.play(player)
 
 
 def win_lose(code):
-    choice = ""
+    player_choice = ""
     if code == 1:
-        choice = basic_print(1)
+        player_choice = basic_print(1)
         if player.score > 21:
             basic_print(0)
             input("you Busted")
@@ -31,21 +31,19 @@ def win_lose(code):
             input("you Won")
         elif dealer.score == player.score:
             input("its a tie")
-    # print(choice)
-    return choice
+    return player_choice
 
 
 Cards.init.new_deck()
 Cards.init.shuffle()
 
 while True:
-    print(Cards.init.deck)
-    print(len(Cards.init.deck))
+    # print(Cards.init.deck)
+    # print(len(Cards.init.deck))
     player = Cards.UserCards("Player")
     dealer = Cards.UserCards("Dealer")
     while True:
         choice = win_lose(1)
-        # print(choice)
         if choice == "stay":
             x = "continue"
             break

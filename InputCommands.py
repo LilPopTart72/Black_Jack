@@ -1,4 +1,3 @@
-
 def play(player):
     while True:
         choice = input('Would you like to "hit" or "stay"? ')

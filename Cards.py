@@ -39,15 +39,14 @@ class UserCards:
         for card in self.cards:
             if type(card[0]) is int:
                 self.score += int(card[0])
-            elif type(card[0]) is str:
-                if card[0] == "Ace":
-                    if self.name == "Dealer":
-                        self.dealer_ace(card)
-                    elif self.name == "Player":
-                        print("right here")
-                        self.player_ace(card)
-                elif card[0] == "Jack" or "Queen" or "King":
-                    self.score += 10
+            elif card[0] == "Ace":
+                if self.name == "Dealer":
+                    self.dealer_ace(card)
+                elif self.name == "Player":
+                    print("right here")
+                    self.player_ace(card)
+            elif card[0] == "Jack" or "Queen" or "King":
+                self.score += 10
 
     def dealer_ace(self, card):
         x = self.cards.index(card)
