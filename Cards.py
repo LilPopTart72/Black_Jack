@@ -1,5 +1,5 @@
 import random
-import InputCommands as IC
+import InputCommands as Ic
 
 
 class Card:
@@ -11,6 +11,7 @@ class Card:
 
     def new_deck(self):
         self.deck = [[value, suit] for suit in self.suit for value in self.value]
+
     def shuffle(self):
         random.shuffle(self.deck)
         # print(self.deck)
@@ -28,11 +29,9 @@ class UserCards:
         self.value_of_card()
 
     def dealer_new_card(self):
-        if self.score < 17:
+        while self.score < 17:
             self.cards.append(init.deck.pop(0))
             self.value_of_card()
-        else:
-            return
 
     def value_of_card(self):
         self.score = 0
@@ -43,7 +42,6 @@ class UserCards:
                 if self.name == "Dealer":
                     self.dealer_ace(card)
                 elif self.name == "Player":
-                    print("right here")
                     self.player_ace(card)
             elif card[0] == "Jack" or "Queen" or "King":
                 self.score += 10
@@ -67,7 +65,7 @@ class UserCards:
         else:
             print(" ")
             print(self.cards)
-            value = IC.ace()
+            value = Ic.ace()
             self.cards[x].append(value)
             self.score += value
 
