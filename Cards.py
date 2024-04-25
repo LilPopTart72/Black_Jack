@@ -14,21 +14,25 @@ class Card():
     def card_name(self, suit, value):
         print(suit, value)
 
-    def value_of_card(self, card):
-        if type(card[0]) == int:
-            return int(card[0])
-        elif type(card[0]) == str:
-            return "its a string"
+    def value_of_card(self, cards):
+        score = 0
+        for card in cards:
+            if type(card[0]) is int:
+                score += int(card[0])
+            elif type(card[0]) is str:
+                if card[0] == "Ace":
+                    score += 1
+                elif card[0] == "Jack" or "Queen" or "King":
+                    score += 10
+        return score
 
 
-class PlayerCard():
-    def __init__(self):
-        self.cards = [init.deck.pop(0), init.deck.pop(1)]
-
-
-class DealerCard():
+class UserCards():
     def __init__(self):
         self.cards = [init.deck.pop(0), init.deck.pop(0)]
+
+    def score(self):
+        return init.value_of_card(self.cards)
 
 
 init = Card()

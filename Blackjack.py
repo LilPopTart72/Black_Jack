@@ -1,16 +1,12 @@
 import Cards
 
-print(Cards.init.deck)
+#print(Cards.init.deck)
 Cards.init.shuffle()
 
-player_cards = Cards.PlayerCard()
-dealer_cards = Cards.DealerCard()
+player_cards = Cards.UserCards()
 print(player_cards.cards)
+print("Player score:", player_cards.score())
+
+dealer_cards = Cards.UserCards()
 print(dealer_cards.cards)
-
-#player_score =
-
-
-
-
-
+print("Dealer score:", dealer_cards.score())
