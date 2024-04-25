@@ -1,6 +1,7 @@
 
 def play(choice, player):
     if choice == "hit":
+        # print(player.score) just a reminder for your tkinter gui you dont need to import for the variables and self.x
         player.new_card()
     elif choice == "stay":
         return choice

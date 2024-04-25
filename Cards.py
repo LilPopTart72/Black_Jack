@@ -13,9 +13,6 @@ class Card:
         random.shuffle(self.deck)
         # print(self.deck)
 
-    def card_name(self, suit, value):
-        print(suit, value)
-
 
 class UserCards:
     def __init__(self, n):
