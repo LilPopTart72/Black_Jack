@@ -1,10 +1,6 @@
 import Cards
 import InputCommands as IC
 
-# print(Cards.init.deck)
-Cards.init.shuffle()
-
-
 
 def basic_print(code):
     print(" ")
@@ -39,6 +35,9 @@ def win_lose(code):
     return choice
 
 
+Cards.init.new_deck()
+Cards.init.shuffle()
+
 while True:
     print(Cards.init.deck)
     print(len(Cards.init.deck))
@@ -56,5 +55,6 @@ while True:
     if x == "continue":
         dealer.dealer_new_card()
         win_lose(0)
-    elif len(Cards.init.deck) < 12:
-        break
+    elif len(Cards.init.deck) < 30:
+        Cards.init.new_deck()
+        Cards.init.shuffle()

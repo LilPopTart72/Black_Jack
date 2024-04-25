@@ -7,8 +7,10 @@ class Card:
     def __init__(self):
         self.suit = ['Spades', 'Clubs', 'Diamonds', 'Hearts']
         self.value = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King']
-        self.deck = [[value, suit] for suit in self.suit for value in self.value]
+        self.deck = []
 
+    def new_deck(self):
+        self.deck = [[value, suit] for suit in self.suit for value in self.value]
     def shuffle(self):
         random.shuffle(self.deck)
         # print(self.deck)
