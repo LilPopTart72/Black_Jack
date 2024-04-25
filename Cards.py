@@ -42,6 +42,7 @@ class UserCards:
                     if self.name == "Dealer":
                         self.dealer_ace(card)
                     elif self.name == "Player":
+                        print("right here")
                         self.player_ace(card)
                 elif card[0] == "Jack" or "Queen" or "King":
                     self.score += 10
@@ -65,7 +66,7 @@ class UserCards:
         else:
             print(" ")
             print(self.cards)
-            value = IC.ace(input("Is this Ace a 1 or 11? "))
+            value = IC.ace()
             self.cards[x].append(value)
             self.score += value
 

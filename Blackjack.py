@@ -4,8 +4,6 @@ import InputCommands as IC
 # print(Cards.init.deck)
 Cards.init.shuffle()
 
-player = Cards.UserCards("Player")
-dealer = Cards.UserCards("Dealer")
 
 
 def basic_print(code):
@@ -16,7 +14,7 @@ def basic_print(code):
     print(dealer.cards)
     print("Dealer score:", dealer.score)
     if code == 1:
-        return IC.play(input("Would you like to hit or stay? ").lower(), player)
+        return IC.play(player)
 
 
 def win_lose(code):
@@ -44,6 +42,8 @@ def win_lose(code):
 while True:
     print(Cards.init.deck)
     print(len(Cards.init.deck))
+    player = Cards.UserCards("Player")
+    dealer = Cards.UserCards("Dealer")
     while True:
         choice = win_lose(1)
         # print(choice)
