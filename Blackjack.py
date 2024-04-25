@@ -1,18 +1,26 @@
 import Cards
+import InputCommands as IC
+import os
 
-#print(Cards.init.deck)
+# print(Cards.init.deck)
 Cards.init.shuffle()
-player_cards = Cards.UserCards()
+player = Cards.UserCards()
 dealer = Cards.UserCards()
+
+
 def basic_print():
     print(" ")
-    print(player_cards.cards)
-    print("Player score:", player_cards.score)
+    print(player.cards)
+    print("Player score:", player.score)
 
     print(dealer.cards)
     print("Dealer score:", dealer.score)
+    return IC.play(input("Would you like to hit or stay? ").lower(), player)
 
 
-basic_print()
-player_cards.new_card()
-basic_print()
+while True:
+    choice = basic_print()
+    if choice == "stay":
+        break
+
+

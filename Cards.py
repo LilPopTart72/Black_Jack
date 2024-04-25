@@ -1,4 +1,6 @@
 import random
+import InputCommands as IC
+
 
 class Card():
 
@@ -9,7 +11,7 @@ class Card():
 
     def shuffle(self):
         random.shuffle(self.deck)
-        #print(self.deck)
+        # print(self.deck)
 
     def card_name(self, suit, value):
         print(suit, value)
@@ -32,10 +34,9 @@ class UserCards():
                 self.score += int(card[0])
             elif type(card[0]) is str:
                 if card[0] == "Ace":
-                    self.score += 1
+                    self.score += IC.ace(input("Is this Ace a 1 or 11? "))
                 elif card[0] == "Jack" or "Queen" or "King":
                     self.score += 10
 
 
 init = Card()
-
