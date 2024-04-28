@@ -1,5 +1,5 @@
 from tkinter import *
-import PIL
+from PIL import ImageTk, Image
 
 root = Tk()
 img = ImageTk.PhotoImage(Image.open("True1.gif"))
